@@ -1,0 +1,3 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['sql', 'export', 'sql', 'inst1lmpb9', 'gs://testingbucketlmpb9/sqldumpfile.gz', '--database=lmpbdata']
