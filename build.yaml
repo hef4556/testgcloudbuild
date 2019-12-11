@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['sql', 'export', 'sql', 'inst1lmpb9', 'gs://testingbucketlmpb9/sqldump$(date -u +%Y%m%dT%H%M%S_$SHORT_SHA)', '--database=lmpbdata']
+  args: ['sql', 'export', 'sql', 'inst1lmpb9', 'gs://testingbucketlmpb9/sqldump$BUILD_ID', '--database=lmpbdata']
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['-m', 'rsync', '-rd', 'gs://testingbucketlmpb9', 'gs://bucketlogslmpb9']
